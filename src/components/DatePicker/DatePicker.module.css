@@ -1,0 +1,59 @@
+.datePicker {
+  display: flex;
+  flex-flow: column;
+  margin: 2px;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 5px;
+  border: 2px solid;
+}
+
+.header {
+  display: flex;
+  flex: 50px;
+}
+
+.header > * {
+  margin: 2px;
+  align-content: center;
+  padding: 0px 2px;
+}
+
+.header h4 {
+  flex: 1;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid;
+  gap: 2px;
+  margin: 2px;
+  border-radius: 5px;
+  padding: 2px 5px;
+  height: 200px;
+}
+
+.days button {
+  width: 30px;
+  border: 2px solid;
+  padding: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header select {
+  padding: 0;
+  height: 30px;
+  width: 80px;
+}
+
+.header button {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.selected {
+  background-color: aquamarine;
+}
