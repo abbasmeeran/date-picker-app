@@ -43,7 +43,6 @@
 .datePickerFooter {
   display: flex;
   padding: 5px;
-  justify-content: end;
 }
 
 .datePickerBody {
@@ -86,7 +85,18 @@ input {
   font-size: 0.8rem;
 }
 
+.datePickerFooter > div a {
+  margin: 5px;
+}
+
+.datePickerFooter div:nth-of-type(2) {
+  display: flex;
+  justify-content: end;
+  flex: 1;
+}
+
 .datePickerFooter button {
-  width: 50px;
+  width: 80px;
   padding: 5px;
+  border-radius: 5px;
 }

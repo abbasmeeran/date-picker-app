@@ -6,6 +6,34 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `Components`
+
+Following are components created for the date range pickerr
+
+#### 'DateRangePicker'
+
+The final componet which allows to select the from and to weekday and displays the results
+
+#### 'DatePicker'
+
+Component renders the calendar with selectable weekdays for From and To with month and year selection at the top
+
+#### 'YearPicker'
+
+Component renders the year drop down
+
+#### 'MonthPicker'
+
+Component displays the prev and next month buttons
+
+#### 'DayPicker'
+
+Component renders the selectable weekdays
+
+#### 'DateRange.ts'
+
+Javascript class whcih holds the selected value of from and to with other business logics
+
 ### `npm start`
 
 Runs the app in the development mode.\

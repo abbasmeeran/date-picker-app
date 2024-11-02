@@ -37,11 +37,11 @@ export default class DateRange {
   validate() {
     const errors: DateRangeError[] = [];
     if (!this._fromDate) {
-      errors.push(new DateRangeError("From ate is required", this));
+      errors.push(new DateRangeError("From date is required", this));
       return errors;
     }
     if (!this._toDate) {
-      errors.push(new DateRangeError("To ate is required", this));
+      errors.push(new DateRangeError("To date is required", this));
       return errors;
     }
     if (this._fromDate > this._toDate) {

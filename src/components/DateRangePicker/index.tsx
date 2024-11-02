@@ -5,6 +5,8 @@ import styles from "./DateRangePicker.module.css";
 import DateRange from "../../lib/DateRange";
 import DateIcon from "./DateIcon";
 import DateRangeError from "../../lib/DateRangeError";
+import { DATE_RANGES } from "../../lib/constants";
+import { getPreDefinedDateRanges } from "../../lib/utils";
 
 type Props = {};
 
@@ -61,6 +63,18 @@ function DateRangePicker({}: Props) {
     setToDate(date);
   }
 
+  function onPreDefinedRangeClick(e: any) {
+    e.preventDefault();
+    e.stopPropagation();
+    const { id } = e.target;
+    const ranges = getPreDefinedDateRanges();
+    const dateRange = ranges[id]();
+    setDateRange(dateRange);
+    setFromDate(dateRange.fromDate);
+    setToDate(dateRange.toDate);
+    toggleDateRange();
+  }
+
   useEffect(() => {
     if (dateRangeRef.current && dateRangePickerRef.current) {
       const { top, left } = dateRangeRef.current.getBoundingClientRect();
@@ -99,7 +113,25 @@ function DateRangePicker({}: Props) {
               </div>
             </div>
             <div className={styles.datePickerFooter}>
-              <button onClick={onDateRangeSelect}>Ok</button>
+              <div className={styles.preDefinedRanges}>
+                <a
+                  href="javascript:void"
+                  id={DATE_RANGES.LAST_7_DAYS.toString()}
+                  onClick={onPreDefinedRangeClick}
+                >
+                  Last 7 days
+                </a>
+                <a
+                  href="javascript:void"
+                  id={DATE_RANGES.LAST_30_DAYS.toString()}
+                  onClick={onPreDefinedRangeClick}
+                >
+                  Last 30 days
+                </a>
+              </div>
+              <div>
+                <button onClick={onDateRangeSelect}>Ok</button>
+              </div>
             </div>
           </div>
         </div>
